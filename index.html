@@ -58,15 +58,15 @@
             <form class="col-lg-8 col-sm-12">
                 <div class="mb-3">
                      <label for="inputnome" class="form-label">Nome</label>
-                     <input type="text" class="form-control" id="inputPassword4">
+                     <input type="text" class="form-control" id="nome">
                 </div>
                 <div class="mb-3">
                      <label for="inputcognome" class="form-label">Cognome</label>
-                     <input type="text" class="form-control" id="inputAddress">
+                     <input type="text" class="form-control" id="cognome">
                 </div>
                 <div class="mb-3">
                      <label for="inputemail" class="form-label">Email</label>
-                     <input type="email" class="form-control" id="inputEmail4">
+                     <input type="email" class="form-control" id="email">
                 </div>
                 <div class="mb-3">
                      <label for="inputlavoro" class="form-label">Tipo di Lavoro</label>
@@ -83,8 +83,8 @@
                 </div>
                 <div class="mb-3">
                     <div class="form-check">
-                     <input class="form-check-input bg-warning" type="checkbox" id="gridCheck">
-                     <label class="form-check-label" for="gridCheck">
+                     <input class="form-check-input bg-warning" type="checkbox" id="privacy">
+                     <label class="form-check-label" for="gridChekprivacy">
                       Accetto la Privacy Policy
                      </label>
                     </div>
@@ -101,11 +101,15 @@
                          <p class="card-text">Se hai bisogno di aiuto puoi contattarci:</p>
                     </div>
                     <ul class="list-group list-group-flush">
-                         <li class="list-group-item text-white bg-dark">help@boolfactory.test</li>
-                         <li class="list-group-item text-white bg-dark">+1122334455</li>
+                         <li class="list-group-item text-white bg-dark">
+                             <a href="mailto:help@boolfactory.test" class= "text-warning text-decoration-none">help@boolfactory.test</a>
+                        </li>
+                         <li class="list-group-item text-white bg-dark">
+                             <a href="tel:+1122334455" class="text-warning text-decoration-none">+1122334455</a>
+                        </li>
                     </ul>
                     <div class="card-body">
-                         <a href="#" class="card-link text-warning bg-dark">Help desk</a>
+                         <a href="#" class="card-link text-warning bg-dark text-decoration-none">Help desk</a>
                     </div>
                 </div> 
             </div>

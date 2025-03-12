@@ -25,3 +25,6 @@
         transition: .5s;
     }
 }
+#helpdesk:hover{
+    color: #00aa03;
+}
