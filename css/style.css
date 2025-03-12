@@ -3,3 +3,15 @@
     margin-top: 10%;
     }
 } 
+#preventivo:hover {
+    background-color: #00aa03;
+    color: #ffffff;
+    border-color: #00aa03;
+    font-size: 105%;
+}
+#annulla:hover {
+    background-color: #c70000;
+    color: #ffffff;
+    border-color: #c70000;
+    font-size: 105%;
+}

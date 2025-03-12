@@ -1,4 +1,3 @@
 //Prova collegamento//
-/* alert("Ciao") */
-
- 
+/* alert("Ciao")
+ */
