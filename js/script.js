@@ -33,3 +33,13 @@ Il prezzo orario per una commissione varia in questo modo:
 - Inserire oggetti all'interno di un array che viene creato ogni volta che viene cliccato il tasto */
 
 
+/* Preleviamo dati form e inpur */
+const businessForm = document.getElementById ()
+const inputEmail = document.getElementById ()
+const inputNome = document.getElementById ()
+const inputCognome = document.getElementById ()
+const inputLavoro = document.getElementById ()
+const inputMessaggio = document.getElementById ()
+const inputCta = document.getElementById ()
+const inputAnnulla = document.getElementById ()
+
