@@ -14,12 +14,12 @@
     <!--Navbar e Logo -->
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid mx-5">
+            <div class="container px-3">
                 <a class="navbar-brand" href="#">Bool Factory</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
                     aria-label="Toggle navigation">
-                     <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse flex-row-reverse" id="navbarNavDropdown">
                     <ul class="navbar-nav">
@@ -46,21 +46,73 @@
     </header>
 
 
-    <!-- Form per richiesta preventivo -->
-    <main>
-
-
-
-
+    <!-- Titolo, Form, Card -->
+    <main class="container px-3 pt-3 pb-5">
+        <!-- Titolo e Form -->
+        <section class="row">
+            <div class="col-lg-8 col-sm-12">
+                <h1>Richiesta preventivo</h1>
+                <p>Compila il forma per richiedere un preventivo per i nostri servizi  di sviluppo
+                </p>
+            </div>
+            <form class="col-lg-8 col-sm-12">
+                <div class="mb-3">
+                     <label for="inputnome" class="form-label">Nome</label>
+                     <input type="text" class="form-control" id="inputPassword4">
+                </div>
+                <div class="mb-3">
+                     <label for="inputcognome" class="form-label">Cognome</label>
+                     <input type="text" class="form-control" id="inputAddress">
+                </div>
+                <div class="mb-3">
+                     <label for="inputemail" class="form-label">Email</label>
+                     <input type="email" class="form-control" id="inputEmail4">
+                </div>
+                <div class="mb-3">
+                     <label for="inputlavoro" class="form-label">Tipo di Lavoro</label>
+                     <select id="tipolavoro" class="form-select">
+                         <option selected>Seleziona il tipo di lavoro</option>
+                         <option>Backed Development</option>
+                         <option>Frontend Development</option>
+                         <option>Project Analysis</option>
+                     </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Messaggio aggiuntivo</label>
+                    <textarea class="form-control" id="messaggio"></textarea>
+                </div>
+                <div class="mb-3">
+                    <div class="form-check">
+                     <input class="form-check-input bg-warning" type="checkbox" id="gridCheck">
+                     <label class="form-check-label" for="gridCheck">
+                      Accetto la Privacy Policy
+                     </label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-warning mb-3 mt-4 ms-5">Calcola preventivo</button>
+            </form>
+            <!-- Contatti -->
+            <div class="col-lg-4 col-sm-12">
+                <div class="card text-white bg-dark">
+                     <img src="./img/300x200.avif" class="card-img-top" alt="Donna che scrive con la tastiera del pc nello sfondo e cuffie in primo piano">
+                    <div class="card-body">
+                         <h5 class="card-title">I nostri contatti</h5>
+                         <p class="card-text">Se hai bisogno di aiuto puoi contattarci:</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                         <li class="list-group-item text-white bg-dark">help@boolfactory.test</li>
+                         <li class="list-group-item text-white bg-dark">+1122334455</li>
+                    </ul>
+                    <div class="card-body">
+                         <a href="#" class="card-link text-warning bg-dark">Help desk</a>
+                    </div>
+                </div> 
+            </div>
+        </section>
     </main>
-
-
-
     <!-- Footer di pagina -->
     <footer>
-
-
-
+        <div class="p-4 bg-dark text-white text-center"><i>&#169</i> 2024 - Tutti i diritti riservati</div>
     </footer>
     <script src="./js/script.js"></script>
 </body>
