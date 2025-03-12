@@ -15,3 +15,11 @@
     border-color: #c70000;
     font-size: 105%;
 }
+#contatti:hover{
+    transform: scale(1.05);
+    transition: .5s;
+}
+#contatti{
+    transform-origin: 0%;
+    transition: .5s;
+}
