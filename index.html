@@ -71,15 +71,15 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Tipo di Lavoro</label>
-                        <select id="tipolavoro" class="form-select">
+                        <select id="lavoro" class="form-select">
                             <option selected>Seleziona il tipo di lavoro</option>
-                            <option>Backed Development</option>
-                            <option>Frontend Development</option>
-                            <option>Project Analysis</option>
+                            <option id="backend">Backend Development</option>
+                            <option id="frontend">Frontend Development</option>
+                            <option id="project">Project Analysis</option>
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Messaggio aggiuntivo</label>
+                        <label class="form-label">Textarea con Bootstrap 5</label>
                         <textarea class="form-control" id="messaggio"></textarea>
                     </div>
                     <div class="mb-3">
@@ -102,9 +102,9 @@
                                 <button type="submit" class="btn btn-primary" id="cta">Calcola preventivo</button>
                             </div>
                             <div class="col-lg-6 col-sm-12 col-md-6">
-                                <span class="text-center align-middle">
-                                    <h5><strong>Prezzo finale</strong></h5>
-                                    <p id="prezzofinale"><i>&euro;</i> <span class="fw-bold fs-5">0</span>,<span class="text-secondary">00</span></p>
+                                <span id="prezzo-finale" class="text-center align-middle">
+                                    <!-- <h5><strong>Prezzo finale</strong></h5>
+                                    <p><i>&euro;</i> <span class="fw-bold fs-5">0</span>,<span class="text-secondary">00</span></p> -->
                                 </span>
                             </div>
                         </div>

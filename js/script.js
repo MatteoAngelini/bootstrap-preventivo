@@ -25,42 +25,25 @@ Il prezzo orario per una commissione varia in questo modo:
 
 
 
-
-/* Richiesta dati:
-
-- Prelevare dati di input dopo click del bottone
-
-- Inserire oggetti all'interno di un array che viene creato ogni volta che viene cliccato il tasto */
-
-
-/*Codici sconto */
-const codici = {
-    codice1:"YHDNU32",
-    codice2:"JANJC63",
-    codice3:"PWKCN25",
-    codice4:"SJDPO96",
-    codice5:"POCIE24",
-};
-
-
-
-
 /* Prelevo dati form */
 const preventivoForm = document.getElementById("form");
 const inputEmail = document.getElementById("email");
 const inputNome = document.getElementById("nome");
 const inputCognome = document.getElementById("cognome");
-const inputLavoro = document.getElementById("tipolavoro");
+const inputLavoro = document.getElementById("lavoro");
+const inputBackend = document.getElementById("backend")
+const inputFrontend = document.getElementById("frontend")
+const inputProject = document.getElementById("project")
 const inputMessaggio = document.getElementById("messaggio");
-const prezzoFinale = document.getElementById("prezzofinale");
+const inputCodice = document.getElementById("codice")
+const prezzoFinale = document.getElementById("prezzo-finale");
 
 
 
 /* Event Listner */
-preventivoForm.addEventListener("submit", gestisciForm);
+preventivoForm.addEventListener("submit", gestisciForm,);
 
 /* Funzioni */
-
 function gestisciForm(event) {
     event.preventDefault();
 
@@ -71,18 +54,54 @@ function gestisciForm(event) {
     const cognome = inputCognome.value;
     const email = inputEmail.value;
     const lavoro = inputLavoro.value;
+    const backend = inputBackend.value;
+    const frontend = inputFrontend.value;
+    const project = inputProject.value
     const messaggio = inputMessaggio.value;
-    console.log(nome, cognome, email, lavoro, messaggio);
+    const codice = inputCodice.value;
+    
+    /*Costrutto IF prezzo */
+    let prezzoDecimali;
+    if (lavoro === backend) {
+        prezzo = 20.50 * 10; 
+        prezzoDecimali = prezzo.toFixed(2)
+    } else if (lavoro === frontend) {
+        prezzo = 15.30 * 10;
+        prezzoDecimali = prezzo.toFixed(2)
+    } else if (lavoro === project) {
+        prezzo = 33.60 * 10;
+        prezzoDecimali = prezzo.toFixed(2)
+    } else {
+        console.log("Nessun dato inserito");  
+    }
+    console.log(prezzoDecimali);
+    
+    
+    /* Codici sconto e prezzo scontato con costrutto IF*/
+    const codici = ["YHDNU32", "JANJC63", "PWKCN25", "SJDPO96", "POCIE24"]   
+    
+    codici.forEach(function (curElem, i){
+        curSconto = (curElem, i) 
+    });
+    
+    let prezzoDecimaliScontato;
+    if (codice === curSconto) {
+        prezzoDecimaliScontato = prezzoDecimali - 100;
+    }else {
+        console.log("Nessuno Sconto")
+    }
+     
+    
 
+    
 
 
     /* Ripulisco gli input */
     preventivoForm.reset();
+ 
 }
 
-function codiciSconto() {
-    let
-}
+
 
 /* Inserisco il valore nell'elemento del prezzo finale */
 
