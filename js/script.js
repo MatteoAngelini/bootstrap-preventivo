@@ -59,46 +59,58 @@ function gestisciForm(event) {
     const project = inputProject.value
     const messaggio = inputMessaggio.value;
     const codice = inputCodice.value;
-    
+
+
+
     /*Costrutto IF prezzo */
     let prezzoDecimali;
     if (lavoro === backend) {
-        prezzo = 20.50 * 10; 
+        const prezzo = 20.50 * 10; 
         prezzoDecimali = prezzo.toFixed(2)
+        prezzoFinale.innerHTML = `<div class="col-lg-6 col-sm-12 col-md-6 mt-3"><span id="prezzo-finale" class="text-center align-middle mt"><h5><strong>Prezzo finale</strong></h5><p><i>&euro;</i><span class="fw-bold fs-5 text-dark">${prezzoDecimali}</p></span></div>`
     } else if (lavoro === frontend) {
-        prezzo = 15.30 * 10;
+        const prezzo = 15.30 * 10;
         prezzoDecimali = prezzo.toFixed(2)
+        prezzoFinale.innerHTML = `<div class="col-lg-6 col-sm-12 col-md-6 mt-3"><span id="prezzo-finale" class="text-center align-middle mt"><h5><strong>Prezzo finale</strong></h5><p><i>&euro;</i><span class="fw-bold fs-5 text-dark">${prezzoDecimali}</p></span></div>`
     } else if (lavoro === project) {
-        prezzo = 33.60 * 10;
+        const prezzo = 33.60 * 10;
         prezzoDecimali = prezzo.toFixed(2)
+        prezzoFinale.innerHTML = `<div class="col-lg-6 col-sm-12 col-md-6 mt-3"><span id="prezzo-finale" class="text-center align-middle mt"><h5><strong>Prezzo finale</strong></h5><p><i>&euro;</i><span class="fw-bold fs-5 text-dark">${prezzoDecimali}</p></span></div>`
     } else {
-        console.log("Nessun dato inserito");  
+        
     }
-    console.log(prezzoDecimali);
     
     
-    /* Codici sconto e prezzo scontato con costrutto IF*/
-    const codici = ["YHDNU32", "JANJC63", "PWKCN25", "SJDPO96", "POCIE24"]   
     
-    codici.forEach(function (curElem, i){
-        curSconto = (curElem, i) 
-    });
+
+    /* Array Codici sconto e ciclo for*/
+     const codici = ["YHDNU32", "JANJC63", "PWKCN25", "SJDPO96", "POCIE24",]
+     const codiceVuoto = [""]   
     
-    let prezzoDecimaliScontato;
-    if (codice === curSconto) {
-        prezzoDecimaliScontato = prezzoDecimali - 100;
-    }else {
-        console.log("Nessuno Sconto")
-    }
+
+     let prezzoDecimaliScontato;
+     codici.forEach(function (curSconto, i){
+        let codiceSconto = curSconto;
+        if (codice === codiceSconto) {
+        prezzoScontato = prezzoDecimali - (prezzoDecimali * 25 / 100);
+        prezzoDecimaliScontato = prezzoScontato.toFixed(2)
+        prezzoFinale.innerHTML = `<div class="col-lg-6 col-sm-12 col-md-6 mt-3"><span id="prezzo-finale" class="text-center align-middle mt"><h5><strong>Prezzo finale</strong></h5><p><i>&euro;</i><span class="fw-bold fs-5 text-dark">${prezzoDecimaliScontato}</p></span></div><div class="col-lg-6 col-sm-12 col-md-6 mt-3"><button type="button" class="btn btn-sm btn-success">Sconto del 25 % applicato</button></div>`
+        } else if(codice === codiceVuoto){
+        prezzoFinale.innerHTML = `<div class="col-lg-6 col-sm-12 col-md-6 mt-3"><span id="prezzo-finale" class="text-center align-middle mt"><h5><strong>Prezzo finale</strong></h5><p><i>&euro;</i><span class="fw-bold fs-5 text-dark">${prezzoDecimali}</p></span></div><div class="col-lg-6 col-sm-12 col-md-6 mt-3"><button type="button" class="btn btn-sm btn-warning">Nessun codice sconto applicato</button></div>`
+        } else{
+      
+        }
+     });
      
-    
+     
 
     
 
 
     /* Ripulisco gli input */
     preventivoForm.reset();
- 
+
+
 }
 
 
@@ -110,8 +122,7 @@ function gestisciForm(event) {
 
 
 
-/* Mostro prezzo finale 
-    prezzoFinale.classList.remove("d-none");*/
+
 
 
 

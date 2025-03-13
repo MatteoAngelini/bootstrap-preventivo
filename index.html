@@ -47,7 +47,7 @@
 
 
     <!-- Titolo, Form, Card, Invio e prezzo finale-->
-    <main class="pt-3">
+    <main class="pt-3 pb-5">
 
 
         <!-- Titolo e Form -->
@@ -71,8 +71,8 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Tipo di Lavoro</label>
-                        <select id="lavoro" class="form-select">
-                            <option selected>Seleziona il tipo di lavoro</option>
+                        <select id="lavoro" class="form-select" required>
+                            <option>Seleziona il tipo di lavoro</option>
                             <option id="backend">Backend Development</option>
                             <option id="frontend">Frontend Development</option>
                             <option id="project">Project Analysis</option>
@@ -84,11 +84,11 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Codice Promozionale (opzionale)</label>
-                        <input type="text" class="form-control" id="codice" autocomplete="off">
+                        <input type="text" class="form-control" id="codice" autocomplete="off"pattern=".{7}" title="Deve avere 7 caratteri">
                     </div>
                     <div class="mb-3">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="privacy" autocomplete="off">
+                            <input class="form-check-input" type="checkbox" id="privacy" autocomplete="off" required>
                             <label class="form-check-label">
                                 Accetto la Privacy Policy
                             </label>
@@ -101,11 +101,9 @@
                             <div class="col-lg-6 col-sm-12 col-md-6">
                                 <button type="submit" class="btn btn-primary" id="cta">Calcola preventivo</button>
                             </div>
-                            <div class="col-lg-6 col-sm-12 col-md-6">
-                                <span id="prezzo-finale" class="text-center align-middle">
-                                    <!-- <h5><strong>Prezzo finale</strong></h5>
-                                    <p><i>&euro;</i> <span class="fw-bold fs-5">0</span>,<span class="text-secondary">00</span></p> -->
-                                </span>
+                            <div class="col-lg-6 col-sm-12 col-md-6" id="prezzo-finale">
+                                
+                                
                             </div>
                         </div>
                     </div>
