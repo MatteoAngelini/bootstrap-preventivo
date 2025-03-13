@@ -1,5 +1,5 @@
 //Prova collegamento//
-/* alert("Ciao")*/
+/* alert("Ciao") */
 
 /* Dati:
 
@@ -33,21 +33,66 @@ Il prezzo orario per una commissione varia in questo modo:
 - Inserire oggetti all'interno di un array che viene creato ogni volta che viene cliccato il tasto */
 
 
-/* Preleviamo dati form */
-const businessForm = document.getElementById ("form")
-const inputEmail = document.getElementById ("email")
-const inputNome = document.getElementById ("nome")
-const inputCognome = document.getElementById ("cognome")
-const inputLavoro = document.getElementById ("tipolavoro")
-const inputMessaggio = document.getElementById ("messaggio")
-const inputCta = document.getElementById ("preventivo")
+/*Codici sconto */
+const codici = {
+    codice1:"YHDNU32",
+    codice2:"JANJC63",
+    codice3:"PWKCN25",
+    codice4:"SJDPO96",
+    codice5:"POCIE24",
+};
 
 
 
-/* Preleviamo i valori dell'input */
-const nome = inputNome.value;
-const cognome = inputCognome.value;
-const email = inputEmail.value;
-const lavoro = inputLavoro.value;
-const messaggio = inputMessaggio.value;
+
+/* Prelevo dati form */
+const preventivoForm = document.getElementById("form");
+const inputEmail = document.getElementById("email");
+const inputNome = document.getElementById("nome");
+const inputCognome = document.getElementById("cognome");
+const inputLavoro = document.getElementById("tipolavoro");
+const inputMessaggio = document.getElementById("messaggio");
+const prezzoFinale = document.getElementById("prezzofinale");
+
+
+
+/* Event Listner */
+preventivoForm.addEventListener("submit", gestisciForm);
+
+/* Funzioni */
+
+function gestisciForm(event) {
+    event.preventDefault();
+
+    /* Prelevo elemento HTML per prezzo finale */
+
+    /* Prelevo i valori dell'input */
+    const nome = inputNome.value;
+    const cognome = inputCognome.value;
+    const email = inputEmail.value;
+    const lavoro = inputLavoro.value;
+    const messaggio = inputMessaggio.value;
+    console.log(nome, cognome, email, lavoro, messaggio);
+
+
+
+    /* Ripulisco gli input */
+    preventivoForm.reset();
+}
+
+function codiciSconto() {
+    let
+}
+
+/* Inserisco il valore nell'elemento del prezzo finale */
+
+
+
+
+
+
+/* Mostro prezzo finale 
+    prezzoFinale.classList.remove("d-none");*/
+
+
 
