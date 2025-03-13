@@ -40,8 +40,7 @@ const inputNome = document.getElementById ("nome")
 const inputCognome = document.getElementById ("cognome")
 const inputLavoro = document.getElementById ("tipolavoro")
 const inputMessaggio = document.getElementById ("messaggio")
-const inputCta = document.getElementById ("prevebtivo")
-const inputAnnulla = document.getElementById ("annulla")
+const inputCta = document.getElementById ("preventivo")
 
 
 
