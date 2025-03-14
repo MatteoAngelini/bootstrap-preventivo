@@ -1,29 +1,3 @@
-//Prova collegamento//
-/* alert("Ciao") */
-
-/* Dati:
-
-- Ore:10 ore
-
-- Codici sconto: YHDNU32, JANJC63, PWKCN25, SJDPO96, POCIE24.
-
-- Sconto: 25%
-
-Il prezzo orario per una commissione varia in questo modo:
-
-- se la commissione riguarda lo sviluppo backend il prezzo orario è di 20.50€/l’ora
-
-- se la commissione riguarda lo sviluppo frontend il prezzo orario è di 15.30€/l’ora
-
-- se la commissione riguarda l’analisi progettuale il prezzo orario è di 33.60€/l’ora
-
-- Risultato del prezzo finale deve essere in forma umana con 2 decimali e il simbolo dell'euro  */
-
-
-
-
-
-
 
 /* Prelevo dati form */
 const preventivoForm = document.getElementById("form");
@@ -38,6 +12,8 @@ const inputMessaggio = document.getElementById("messaggio");
 const inputCodice = document.getElementById("codice")
 const outputPrezzo = document.getElementById("prezzo")
 const outputScontoApplicato = document.getElementById("sconto-applicato")
+
+
 /* Array Codici sconto e ciclo for*/
 const codiciSconto = ["YHDNU32", "JANJC63", "PWKCN25", "SJDPO96", "POCIE24",] 
 
@@ -92,7 +68,7 @@ function gestisciForm(event) {
                 outputScontoApplicato.innerHTML = `<button type="button" class="btn btn-sm btn-danger"id="sconto-applicato">Codice non valido</button>`;
             }
     }
-    
+
     /* Assegnazione output generale fuori dalla condizione */
     outputPrezzo.innerHTML = `<span class="text-center align-middle "><h5><strong>Prezzo finale</strong></h5><p><i>&euro;</i><span class="fw-bold fs-5 text-dark"> ${prezzoScontatoDecimali}</p></span>`;
             
@@ -105,9 +81,6 @@ function gestisciForm(event) {
 
 }
 
-
-
-/* Inserisco il valore nell'elemento del prezzo finale */
 
 
 
