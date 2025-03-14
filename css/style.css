@@ -70,3 +70,24 @@
         font-size: 12px; 
     }  
 }
+@media screen and (min-width: 1440px) {
+    #button {
+        text-align: center;
+    }
+    #cta{
+        font-size: 20px;
+    }
+    #prezzo{
+        text-align: center;
+    }
+    #sconto-applicato{
+        text-align: start;
+        padding-left: 0px;
+    }
+    #sconto-true{
+        font-size: 16px;
+    }
+    #sconto-false{
+        font-size: 16px; 
+    }  
+}
