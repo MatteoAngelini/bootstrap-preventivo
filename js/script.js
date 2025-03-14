@@ -63,7 +63,7 @@ function gestisciForm(event) {
     if (codice !== "") {
             if (codiciSconto.includes(codice)){
                 prezzoScontatoDecimali = prezzoFinaleDecimali - (prezzoBase * 25 / 100).toFixed(2);
-                outputPrezzo.innerHTML = `<span class="text-center align-middle "><h5 class="fs-5 text-dark">Prezzo finale</h5><p><i class="fs-5 text-dark">&euro;</i><span class="fw-bold fs-5 text-dark"> ${parteIntera},</span><span class="fw-normal fs-6 text-secondary">,${decimali}</p></span>`;
+                outputPrezzo.innerHTML = `<span class="align-middle"><h5 class="fs-5 text-dark">Prezzo finale</h5><p><i class="fs-5 text-dark">&euro;</i><span class="fw-bold fs-5 text-dark"> ${parteIntera},</span><span class="fw-normal fs-6 text-secondary">,${decimali}</p></span>`;
                 outputScontoApplicato.innerHTML = `<button type="button" class="btn btn-sm btn-success"id="sconto-applicato">Sconto del 25 % applicato</button>`;
             } else {
                 outputScontoApplicato.innerHTML = `<button type="button" class="btn btn-sm btn-danger"id="sconto-applicato">Codice non valido</button>`;
@@ -71,7 +71,7 @@ function gestisciForm(event) {
     }
 
     /* Assegnazione output generale fuori dalla condizione */
-    outputPrezzo.innerHTML = `<span class="text-center align-middle "><h5 class="fs-5 text-dark">Prezzo finale</h5><p><i class="fs-5 text-dark">&euro;</i><span class="fw-bold fs-5 text-dark"><span class="fw-bold fs-5 text-dark"> ${parteIntera}</span><span class="fw-normal fs-6 text-secondary">,${decimali}</p></span>`;
+    outputPrezzo.innerHTML = `<span class="align-middle "><h5 class="fs-5 text-dark">Prezzo finale</h5><p><i class="fs-5 text-dark">&euro;</i><span class="fw-bold fs-5 text-dark"><span class="fw-bold fs-5 text-dark"> ${parteIntera}</span><span class="fw-normal fs-6 text-secondary">,${decimali}</p></span>`;
             
         
 
