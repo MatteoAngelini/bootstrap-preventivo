@@ -36,20 +36,19 @@ const inputFrontend = document.getElementById("frontend")
 const inputProject = document.getElementById("project")
 const inputMessaggio = document.getElementById("messaggio");
 const inputCodice = document.getElementById("codice")
-const prezzoFinale = document.getElementById("prezzo-finale");
-const outputSconto = document.getElementById("sconto")
-
-
+const outputPrezzo = document.getElementById("prezzo")
+const outputScontoApplicato = document.getElementById("sconto-applicato")
+/* Array Codici sconto e ciclo for*/
+const codiciSconto = ["YHDNU32", "JANJC63", "PWKCN25", "SJDPO96", "POCIE24",] 
 
 /* Event Listner */
 preventivoForm.addEventListener("submit", gestisciForm,);
 
 
-/* Funzioni */
+/* Funzione*/
 function gestisciForm(event) {
     event.preventDefault();
 
-    /* Prelevo elemento HTML per prezzo finale */
 
     /* Prelevo i valori dell'input */
     const nome = inputNome.value;
@@ -60,51 +59,44 @@ function gestisciForm(event) {
     const frontend = inputFrontend.value;
     const project = inputProject.value
     const messaggio = inputMessaggio.value;
-    const codice = inputCodice.value;
+    const codice = inputCodice.value.trim();
 
-
-
-    /*Costrutto IF prezzo */
-    let prezzoDecimali;
+    
+    /* Assegnazione prezzo alla variabile */
+    let prezzoBase = 0;
     if (lavoro === backend) {
-        const prezzo = 20.50 * 10; 
-        prezzoDecimali = prezzo.toFixed(2)
-        prezzoFinale.innerHTML = `<span id="prezzo-finale" class="text-center align-middle"><h5><strong>Prezzo finale</strong></h5><p><i>&euro;</i><span class="fw-bold fs-5 text-dark"> ${prezzoDecimali}</p></span>`
+        prezzoBase = 20.50 * 10; 
     } else if (lavoro === frontend) {
-        const prezzo = 15.30 * 10;
-        prezzoDecimali = prezzo.toFixed(2)
-        prezzoFinale.innerHTML = `<span class="text-center align-middle"><h5><strong>Prezzo finale</strong></h5><p><i>&euro;</i><span class="fw-bold fs-5 text-dark"> ${prezzoDecimali}</p></span>`
+        prezzoBase = 15.30 * 10;
     } else if (lavoro === project) {
-        const prezzo = 33.60 * 10;
-        prezzoDecimali = prezzo.toFixed(2)
-        prezzoFinale.innerHTML = `<span class="text-center align-middle"><h5><strong>Prezzo finale</strong></h5><p><i>&euro;</i><span class="fw-bold fs-5 text-dark"> ${prezzoDecimali}</p></span>`
-    } else {
-        
+        prezzoBase = 33.60 * 10;   
     }
     
-    
+    /* Creazione variabili per decimali  */
+    let prezzoFinaleDecimali = prezzoBase.toFixed(2);
+    let prezzoScontatoDecimali = prezzoFinaleDecimali;
     
 
-    /* Array Codici sconto e ciclo for*/
-     const codici = ["YHDNU32", "JANJC63", "PWKCN25", "SJDPO96", "POCIE24",]  
-     const codiceNum = parseInt(codice) 
+    /* Reset inner */
+    outputPrezzo.innerHTML = "";
+    outputScontoApplicato.innerHTML = "";
     
     
-     let prezzoDecimaliScontato;
-     codici.forEach(function (curSconto, i){
-        let codiceSconto = curSconto;
-        if (codice === codiceSconto) {
-            prezzoScontato = prezzoDecimali - (prezzoDecimali * 25 / 100);
-            prezzoDecimaliScontato = prezzoScontato.toFixed(2)
-            prezzoFinale.innerHTML = `<span class="text-center align-middle "><h5><strong>Prezzo finale</strong></h5><p><i>&euro;</i><span class="fw-bold fs-5 text-dark"> ${prezzoDecimaliScontato}</p></span>`
-            sconto.innerHTML = `<button type="button" class="btn btn-sm btn-success" id="sconto-applicato">Sconto del 25 % applicato</button>`
-        } else if(codice === ""){
-            prezzoFinale.innerHTML = `<span class="text-center align-middle "><h5><strong>Prezzo finale</strong></h5><p><i>&euro;</i><span class="fw-bold fs-5 text-dark"> ${prezzoDecimali}</p></span>`
-        } else {
-            prezzoFinale.innerHTML = `<span class="text-center align-middle "><h5><strong>Prezzo finale</strong></h5><p><i>&euro;</i><span class="fw-bold fs-5 text-dark"> ${prezzoDecimali}</p></span>`
-            sconto.innerHTML = `<button type="button" class="btn btn-sm btn-danger" id="sconto-applicato">Codice non valido</button>`
-        }
-     });
+    /* Condizione per scontistica */
+    if (codice !== "") {
+            if (codiciSconto.includes(codice)){
+                prezzoScontatoDecimali = prezzoFinaleDecimali - (prezzoBase * 25 / 100).toFixed(2);
+                outputPrezzo.innerHTML = `<span class="text-center align-middle "><h5><strong>Prezzo finale</strong></h5><p><i>&euro;</i><span class="fw-bold fs-5 text-dark"> ${prezzoScontatoDecimali}</p></span>`;
+                outputScontoApplicato.innerHTML = `<button type="button" class="btn btn-sm btn-success"id="sconto-applicato">Sconto del 25 % applicato</button>`;
+            } else {
+                outputScontoApplicato.innerHTML = `<button type="button" class="btn btn-sm btn-danger"id="sconto-applicato">Codice non valido</button>`;
+            }
+    }
+    
+    /* Assegnazione output generale fuori dalla condizione */
+    outputPrezzo.innerHTML = `<span class="text-center align-middle "><h5><strong>Prezzo finale</strong></h5><p><i>&euro;</i><span class="fw-bold fs-5 text-dark"> ${prezzoScontatoDecimali}</p></span>`;
+            
+        
 
     
     /* Ripulisco gli input */
