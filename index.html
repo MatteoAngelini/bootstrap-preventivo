@@ -59,15 +59,15 @@
                     </p>
                     <div class="mb-3">
                         <label class="form-label">Nome</label>
-                        <input type="text" class="form-control" id="nome" autocomplete="off">
+                        <input type="text" class="form-control" id="nome" autocomplete="off" required>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Cognome</label>
-                        <input type="text" class="form-control" id="cognome" autocomplete="off">
+                        <input type="text" class="form-control" id="cognome" autocomplete="off" required>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" autocomplete="off">
+                        <input type="email" class="form-control" id="email" autocomplete="off" required>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Tipo di Lavoro</label>
@@ -84,7 +84,8 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Codice Promozionale (opzionale)</label>
-                        <input type="text" class="form-control" id="codice" autocomplete="off"pattern=".{7}" title="Deve avere 7 caratteri">
+                        <input type="text" class="form-control" id="codice" autocomplete="off" pattern=".{7}"
+                            title="Deve avere 7 caratteri">
                     </div>
                     <div class="mb-3">
                         <div class="form-check">
@@ -98,16 +99,21 @@
                     <!-- CTA e Prezzo finale-->
                     <div class="container mb-5 mt-5 px-0">
                         <div class="row text-center">
-                            <div class="col-lg-6 col-sm-12 col-md-6">
+                            <div class="col-lg-4 col-sm-12 col-md-4">
                                 <button type="submit" class="btn btn-primary" id="cta">Calcola preventivo</button>
                             </div>
-                            <div class="col-lg-6 col-sm-12 col-md-6" id="prezzo-finale">
-                                
-                                
+                            <div class="col-lg-4 col-sm-12 col-md-4 mt-2" id="prezzo-finale">
+
                             </div>
+                            <div class="col-lg-4 col-sm-12 col-md-4" id="sconto">
+
+
+                            </div>
+                    
                         </div>
                     </div>
                 </form>
+
 
 
 
@@ -138,7 +144,7 @@
 
         </div>
 
-        
+
     </main>
 
 
