@@ -14,8 +14,21 @@ const outputPrezzo = document.getElementById("prezzo")
 const outputScontoApplicato = document.getElementById("sconto-applicato")
 
 
-/* Array Codici sconto e ciclo for*/
+/* Array Codici sconto */
 const codiciSconto = ["YHDNU32", "JANJC63", "PWKCN25", "SJDPO96", "POCIE24",] 
+
+
+/* Oggetto contenente le opzioni della select */
+const lavori = {
+    backend: "Sviluppo Backend",
+    frontend: "Sviluppo Frontend",
+    project: "Project Manager",
+};
+
+
+/* Genero dinamicamente le opzioni */
+inputLavoro.innerHTML = `<option value="" selected disabled>Seleziona il tipo di lavoro</option>
+${Object.entries(lavori).map(([chiave,valore])=>`<option value="${chiave}">${valore}</option>`).join("")} `;
 
 /* Event Listner */
 preventivoForm.addEventListener("submit", gestisciForm,);
