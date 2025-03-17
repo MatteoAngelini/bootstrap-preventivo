@@ -124,7 +124,6 @@ function gestisciForm(event) {
 
 
 
-
 /* Funzione ed Event Listner Check Privacy policy */
 document.addEventListener("DOMContentLoaded", function () {
 
