@@ -25,49 +25,25 @@ const accettoPrivacy = document.getElementById("accettoPrivacy");
 const codiciSconto = ["YHDNU32", "JANJC63", "PWKCN25", "SJDPO96", "POCIE24",]
 
 
+
+
+/* Lavori dinamici */
 /* Oggetto contenente le opzioni della select */
 const lavori = {
     backend: "Sviluppo Backend",
     frontend: "Sviluppo Frontend",
     project: "Project Manager",
 };
-
-
 /* Genero dinamicamente le opzioni */
 inputLavoro.innerHTML = `<option value="" selected disabled>Seleziona il tipo di lavoro</option>
 ${Object.entries(lavori).map(([chiave, valore]) => `<option value="${chiave}">${valore}</option>`).join("")} `;
 
-/* Event Listner */
+
+
+
+
+/* Event Listner Form*/
 preventivoForm.addEventListener("submit", gestisciForm,);
-
-
-
-
-/* Funzione ed Event Listner Check Privacy policy */
-document.addEventListener("DOMContentLoaded", function () {
-  
-    // Apri il modulo quando si clicca sul link "Accetto la Privacy Policy"
-    apriPrivacyPolicy.addEventListener("click", function (event) {
-        event.preventDefault();
-
-        // Mostra il modulo Bootstrap
-        let moduloPrivacy = new bootstrap.Modal(document.getElementById("moduloPrivacy"));
-        moduloPrivacy.show();
-    });
-
-    // Abilita la checkbox solo dopo aver accettato la Privacy Policy
-    accettoPrivacy.addEventListener("click", function () {
-        privacyCheckbox.checked = true;
-
-        // Chiudi il modulo
-        let moduloPrivacyChiuso = document.getElementById("moduloPrivacy");
-        let moduloPrivacy = bootstrap.Modal.getInstance(moduloPrivacyChiuso);
-        moduloPrivacy.hide();
-    });
-});
-
-
-
 
 
 
@@ -149,7 +125,28 @@ function gestisciForm(event) {
 
 
 
+/* Funzione ed Event Listner Check Privacy policy */
+document.addEventListener("DOMContentLoaded", function () {
 
+    // Apri il modulo quando si clicca sul link "Accetto la Privacy Policy"
+    apriPrivacyPolicy.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        // Mostra il modulo Bootstrap
+        let moduloPrivacy = new bootstrap.Modal(document.getElementById("moduloPrivacy"));
+        moduloPrivacy.show();
+    });
+
+    // Abilita la checkbox solo dopo aver accettato la Privacy Policy
+    accettoPrivacy.addEventListener("click", function () {
+        privacyCheckbox.checked = true;
+
+        // Chiudi il modulo
+        let moduloPrivacyChiuso = document.getElementById("moduloPrivacy");
+        let moduloPrivacy = bootstrap.Modal.getInstance(moduloPrivacyChiuso);
+        moduloPrivacy.hide();
+    });
+});
 
 
 
