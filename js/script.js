@@ -12,10 +12,17 @@ const inputMessaggio = document.getElementById("messaggio");
 const inputCodice = document.getElementById("codice")
 const outputPrezzo = document.getElementById("prezzo")
 const outputScontoApplicato = document.getElementById("sconto-applicato")
+const privacyCheckbox = document.getElementById("privacy");
+const apriPrivacyPolicy = document.getElementById("apriPrivacyPolicy");
+const accettoPrivacy = document.getElementById("accettoPrivacy");
+
+
+
+
 
 
 /* Array Codici sconto */
-const codiciSconto = ["YHDNU32", "JANJC63", "PWKCN25", "SJDPO96", "POCIE24",] 
+const codiciSconto = ["YHDNU32", "JANJC63", "PWKCN25", "SJDPO96", "POCIE24",]
 
 
 /* Oggetto contenente le opzioni della select */
@@ -28,22 +35,20 @@ const lavori = {
 
 /* Genero dinamicamente le opzioni */
 inputLavoro.innerHTML = `<option value="" selected disabled>Seleziona il tipo di lavoro</option>
-${Object.entries(lavori).map(([chiave,valore])=>`<option value="${chiave}">${valore}</option>`).join("")} `;
+${Object.entries(lavori).map(([chiave, valore]) => `<option value="${chiave}">${valore}</option>`).join("")} `;
 
 /* Event Listner */
 preventivoForm.addEventListener("submit", gestisciForm,);
 
 
+
+
 /* Funzione ed Event Listner Check Privacy policy */
-document.addEventListener("DOMContentLoaded", function() {
-    const privacyCheckbox = document.getElementById("privacy");
-    const apriPrivacyPolicy = document.getElementById("apriPrivacyPolicy");
-    const accettoPrivacy = document.getElementById("accettoPrivacy");
-
-
+document.addEventListener("DOMContentLoaded", function () {
+  
     // Apri il modulo quando si clicca sul link "Accetto la Privacy Policy"
-    apriPrivacyPolicy.addEventListener("click", function(event) {
-        event.preventDefault(); 
+    apriPrivacyPolicy.addEventListener("click", function (event) {
+        event.preventDefault();
 
         // Mostra il modulo Bootstrap
         let moduloPrivacy = new bootstrap.Modal(document.getElementById("moduloPrivacy"));
@@ -51,9 +56,9 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // Abilita la checkbox solo dopo aver accettato la Privacy Policy
-    accettoPrivacy.addEventListener("click", function() {
+    accettoPrivacy.addEventListener("click", function () {
         privacyCheckbox.checked = true;
-        
+
         // Chiudi il modulo
         let moduloPrivacyChiuso = document.getElementById("moduloPrivacy");
         let moduloPrivacy = bootstrap.Modal.getInstance(moduloPrivacyChiuso);
@@ -79,22 +84,22 @@ function gestisciForm(event) {
     const messaggio = inputMessaggio.value;
     const codice = inputCodice.value.trim();
 
-    
+
     /* Assegnazione prezzo alla variabile */
     let prezzoBase = 0;
     if (lavoro === "backend") {
-        prezzoBase = 20.50 * 10; 
+        prezzoBase = 20.50 * 10;
     } else if (lavoro === "frontend") {
         prezzoBase = 15.30 * 10;
     } else if (lavoro === "project") {
-        prezzoBase = 33.60 * 10;   
+        prezzoBase = 33.60 * 10;
     }
-    
+
     /* Creazione variabili per decimali  */
     let prezzoFinale = prezzoBase;
     let scontoApplicato = false;
-    
-    
+
+
     /* Controllo codice sconto */
     if (codice !== "" && codiciSconto.includes(codice)) {
         let sconto = (prezzoBase * 25 / 100);
@@ -119,8 +124,8 @@ function gestisciForm(event) {
             </p>
         </span>
     `;
-     
-    
+
+
     /* Mostra il messaggio di sconto o errore */
     if (scontoApplicato) {
         outputScontoApplicato.innerHTML = `<button type="button" class="btn btn-sm btn-success" id="sconto-true">
@@ -133,11 +138,10 @@ function gestisciForm(event) {
     } else {
         outputScontoApplicato.innerHTML = "";
     }
-        
 
-    
-    
-    
+
+
+
     /* Ripulisco gli input */
     preventivoForm.reset();
 }
