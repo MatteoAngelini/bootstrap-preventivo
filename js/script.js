@@ -34,6 +34,38 @@ ${Object.entries(lavori).map(([chiave,valore])=>`<option value="${chiave}">${val
 preventivoForm.addEventListener("submit", gestisciForm,);
 
 
+/* Funzione ed Event Listner Check Privacy policy */
+document.addEventListener("DOMContentLoaded", function() {
+    const privacyCheckbox = document.getElementById("privacy");
+    const apriPrivacyPolicy = document.getElementById("apriPrivacyPolicy");
+    const accettoPrivacy = document.getElementById("accettoPrivacy");
+
+
+    // Apri il modulo quando si clicca sul link "Accetto la Privacy Policy"
+    apriPrivacyPolicy.addEventListener("click", function(event) {
+        event.preventDefault(); 
+
+        // Mostra il modulo Bootstrap
+        let moduloPrivacy = new bootstrap.Modal(document.getElementById("moduloPrivacy"));
+        moduloPrivacy.show();
+    });
+
+    // Abilita la checkbox solo dopo aver accettato la Privacy Policy
+    accettoPrivacy.addEventListener("click", function() {
+        privacyCheckbox.checked = true;
+        
+        // Chiudi il modulo
+        let moduloPrivacyChiuso = document.getElementById("moduloPrivacy");
+        let moduloPrivacy = bootstrap.Modal.getInstance(moduloPrivacyChiuso);
+        moduloPrivacy.hide();
+    });
+});
+
+
+
+
+
+
 /* Funzione*/
 function gestisciForm(event) {
     event.preventDefault();
